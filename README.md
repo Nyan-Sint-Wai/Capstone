@@ -1,46 +1,29 @@
-# 🎓 Teacher & Researcher Portal - Setup Guide
+# 🎓 Teacher & Researcher Portal
 
-This guide will help you get the project running on your computer after downloading the files.
+This project uses a React frontend and a Node.js/Express backend with MongoDB Atlas.
 
 ---
 
-## 🚀 Step-by-Step Instructions
+## 🚀 Setup Instructions
+Download the files and unzip.
 
-### 1. Unzip the Folder
-After downloading, right-click the ZIP file and select **"Extract All"**. 
-*Note: The code will not run correctly if you try to open it from inside the "Compressed" view.*
-
-### 2. Setup the Backend (The Server)
-1. Open your terminal (or Command Prompt) and move into the `backend` folder:
-   ```bash
-   cd path/to/backend
-Install the necessary libraries:
-
-Bash
+### 1. Install Dependencies
+Open your terminal in the **backend** folder and run:
 npm install
 
-Create a .env file inside the backend folder.
+Then open a second terminal in the **frontend** folder and run:
+npm install
 
-Open that file in Notepad and paste the link I sent you:
+### 2. Database Configuration
+Create a file named `.env` inside the **backend** folder. 
+Paste your connection string inside:
 
-something like this
-MONGO_URI=mongodb+srv://admin:password123@cluster0...
+It should look like this.
+MONGO_URI="link i sent"
 
-Start the server:
-
-Bash
+### 3. Start the Project
+In the backend terminal:
 node server.js
 
-3. Setup the Frontend (The Website)
-Open a SECOND terminal window and go to the frontend folder:
-
-Bash
-cd path/to/frontend
-Install the libraries:
-
-Bash
-npm install
-Start the website:
-
-Bash
+In the frontend terminal:
 npm start
