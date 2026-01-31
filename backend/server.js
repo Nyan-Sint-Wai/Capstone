@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
@@ -7,12 +8,13 @@ const cors = require('cors');
 const app = express();
 app.use(express.json());
 app.use(cors()); // Allows Frontend (3000) to talk to Backend (5000)
-
 // 1. DATABASE CONNECTION
-mongoose.connect('mongodb://localhost:27017/capstone_db')
-  .then(() => console.log("✅ MongoDB Connected Successfully"))
-  .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
+const cloudDB = "mongodb+srv://nyansintwai310_db_user:Qvj7LZ3Sicbxe32n@cluster0.64ocjvi.mongodb.net/?appName=Cluster0";
+
+mongoose.connect(cloudDB)
+  .then(() => console.log("☁️ Connected to MongoDB ATLAS Cloud"))
+  .catch(err => console.error("Cloud Connection Error:", err));
 // 2. USER SCHEMA (The blueprint for your users)
 const UserSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
